@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Деловойс записывает задачи с рабочих встреч</title>
-<meta name="description" content="Деловойс слушает запись рабочей встречи и составляет список дел: что нужно сделать, кто это делает и когда дело должно быть готово. Пока сервис проверяют, кабинет бесплатный.">
+<meta name="description" content="Деловойс слушает запись рабочей встречи и собирает задачи и сроки. Видно, что горит и что ещё не решено. У каждой записи — слова со встречи и время, когда их сказали.">
 <link rel="canonical" href="https://delovoice.ru/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="Деловойс">
 <meta property="og:title" content="Деловойс записывает задачи с рабочих встреч">
-<meta property="og:description" content="Деловойс слушает запись встречи и составляет список дел: что сделать, кто делает и когда дело должно быть готово.">
+<meta property="og:description" content="Деловойс слушает запись встречи и собирает задачи и сроки. Видно, что горит и что ещё не решено.">
 <meta property="og:url" content="https://delovoice.ru/">
 <meta property="og:image" content="https://delovoice.ru/assets/share-1200x630.jpg">
 <meta property="og:image:secure_url" content="https://delovoice.ru/assets/share-1200x630.jpg">
@@ -24,7 +24,7 @@
 <meta property="vk:image" content="https://delovoice.ru/assets/share-vk-1074x480.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Деловойс записывает задачи с рабочих встреч">
-<meta name="twitter:description" content="Деловойс слушает запись встречи и составляет список дел: что сделать, кто делает и когда дело должно быть готово.">
+<meta name="twitter:description" content="Деловойс слушает запись встречи и собирает задачи и сроки. Видно, что горит и что ещё не решено.">
 <meta name="twitter:image" content="https://delovoice.ru/assets/share-1200x600.jpg">
 <meta name="twitter:image:alt" content="Поля с микрофонами вместо цветов и человек на тропинке между ними">
 <link rel="image_src" href="https://delovoice.ru/assets/share-1200x630.jpg">
@@ -33,7 +33,7 @@
 <link rel="preload" as="image" type="image/webp" imagesrcset="assets/hero-wide-1100.webp 1100w, assets/hero-wide-1672.webp 1672w" imagesizes="100vw" media="(min-width: 901px)">
 <link rel="preload" as="image" type="image/webp" imagesrcset="assets/hero-tall-620.webp 620w, assets/hero-tall-941.webp 941w" imagesizes="100vw" media="(max-width: 900px)">
 <link rel="stylesheet" href="style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Деловойс","alternateName":"Delovoice","url":"https://delovoice.ru/","applicationCategory":"BusinessApplication","operatingSystem":"Web","inLanguage":"ru","description":"Деловойс слушает запись рабочей встречи и составляет список дел: что нужно сделать, кто это делает и когда дело должно быть готово."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Деловойс","alternateName":"Delovoice","url":"https://delovoice.ru/","applicationCategory":"BusinessApplication","operatingSystem":"Web","inLanguage":"ru","description":"Деловойс слушает запись рабочей встречи и собирает задачи и сроки. Видно, что горит и что ещё не решено. У каждой записи — слова со встречи и время, когда их сказали."}</script>
 <script>
 /* старые адреса вида delovoice.ru/#login или #overview вели в демо — переадресуем */
 (function(h){var keep={home:1,how:1,product:1,pricing:1,features:'product',presentation:'how'};if(!h)return;if(keep[h]){if(typeof keep[h]==='string')location.replace('#'+keep[h]);return;}location.replace('demo.html#'+(h==='login'?'overview':h));})(location.hash.slice(1));
@@ -42,12 +42,11 @@
 <body class="site">
 
 <header class="site-nav">
-  <a href="/" class="brand" aria-label="На главную страницу Деловойс"><img src="assets/logo-dark.png" alt="Деловойс" width="190" height="19"></a>
+  <a href="/" class="brand" aria-label="На главную страницу Деловойс"><img src="assets/logo-dark.png" alt="Деловойс" width="285" height="29"></a>
   <nav aria-label="Основное меню">
     <a href="#pricing" class="nav-link">Цены</a>
     <a href="demo.html" class="nav-link">Пример работы</a>
     <a href="https://app.delovoice.ru/#in" class="btn">Войти</a>
-    <a href="https://app.delovoice.ru/" class="btn primary nav-cta">Создать кабинет</a>
   </nav>
 </header>
 
@@ -62,20 +61,13 @@
   <div class="hero-text">
     <h1 id="hero-title"><span>Деловойс</span> <span>записывает задачи</span> <span>с&nbsp;рабочих встреч</span></h1>
     <div class="lead">
-      <p>На работе люди встречаются и&nbsp;решают, что нужно сделать.</p>
-      <p>Деловойс слушает запись встречи и&nbsp;составляет список дел. В&nbsp;списке видно:</p>
-      <ul class="dash">
-        <li>что нужно сделать;</li>
-        <li>кто это делает;</li>
-        <li>когда дело должно быть готово.</li>
-      </ul>
-      <p>Программа показывает, что ещё не сделано. А&nbsp;если нужно, можно найти слова человека, который дал задание.</p>
+      <p>Запишите встречу. Деловойс сам соберёт задачи и&nbsp;сроки и&nbsp;покажет, что горит и&nbsp;что ещё не&nbsp;решено.</p>
+      <p>У&nbsp;каждой задачи есть слова со&nbsp;встречи и&nbsp;время, когда их сказали.</p>
     </div>
     <div class="hero-actions">
       <a href="https://app.delovoice.ru/" class="btn primary">Создать кабинет</a>
       <a href="demo.html" class="btn">Посмотреть пример</a>
     </div>
-    <p class="note">Пока мы проверяем работу сервиса, кабинет бесплатный. В&nbsp;примере показана придуманная компания.</p>
   </div>
 </section>
 
@@ -87,53 +79,54 @@
     <li><b>Собираем дела</b>Программа находит задания. Для каждого показывает человека и срок, если они прозвучали на встрече.</li>
     <li><b>Проверяем результат</b>В кабинете видно, что готово, что ещё делают и где срок уже прошёл.</li>
   </ol>
-  <p class="aside">При первой записи люди называют свои имена и говорят, за что отвечают. Дальше встречи проходят как обычно.</p>
+  <p class="aside">После регистрации ответьте на несколько вопросов о&nbsp;компании: чем занимаетесь, кто в&nbsp;команде, какие слова у&nbsp;вас свои. Дальше встречи проходят как обычно.</p>
 </section>
 
 <section class="block wrap" id="product">
   <div class="product">
     <div class="product-text">
-      <h2>Все рабочие дела в одном месте</h2>
-      <p class="lead">Деловойс не ставит галочку «Готово», если человек просто перестал говорить о деле. Если из разговора не ясно, кто отвечает или когда нужен результат, программа просит это уточнить.</p>
+      <h2>Все рабочие дела в&nbsp;одном месте</h2>
       <dl class="points">
-        <div><dt>Когда нужно сделать</dt><dd>Если человек сказал «завтра» или «в пятницу», программа может поставить нужную дату. Если сказали «как-нибудь скоро», точного дня нет. Его нужно уточнить.</dd></div>
-        <div><dt>Вся история одного дела</dt><dd>На разных встречах люди могут много раз говорить об одной задаче. Деловойс собирает эти разговоры вместе. Можно увидеть, что уже сделали и почему проблема появилась снова.</dd></div>
-        <div><dt>Можно узнать, кто и что сказал</dt><dd>У задачи есть фраза из встречи и время записи. Если программа не уверена, она просит руководителя проверить.</dd></div>
-        <div><dt>О чём нельзя забыть</dt><dd>Перед встречей видно, какие дела просрочены, что нужно закончить сегодня и какие проблемы давно не обсуждали. Можно проверить работу каждого сотрудника и отдела.</dd></div>
-        <div><dt>Главное из каждой встречи <span class="soon">Скоро в кабинете</span></dt><dd>Не нужно перечитывать весь разговор. Деловойс покажет, о чём говорили, что решили и что нужно проверить. Можно посмотреть одну встречу или выбрать сразу несколько дней. <a href="demo.html#summary" class="text-link">Посмотреть пример итогов</a></dd></div>
+        <div><dt>Дела собраны по&nbsp;объектам</dt><dd>Насос, клиент, договор: всё, что о&nbsp;них говорили на&nbsp;разных встречах, лежит в&nbsp;одной карточке.</dd></div>
+        <div><dt>Важное сверху</dt><dd>Деловойс отмечает, что горит, что важно и&nbsp;что подождёт. Поправить можно одним касанием.</dd></div>
+        <div><dt>Задача решена, когда это сказали</dt><dd>Закрытых шагов для этого мало. Если проблема вернулась, Деловойс покажет: сделали, но&nbsp;не&nbsp;решили.</dd></div>
+        <div><dt>Слова со&nbsp;встречи</dt><dd>У&nbsp;каждой записи есть фраза и&nbsp;время в&nbsp;записи. Срок ставится, только если его назвали.</dd></div>
+        <div><dt>Итоги встреч</dt><dd>Главное с&nbsp;одной встречи или за&nbsp;месяц, с&nbsp;сохранением в&nbsp;PDF. <a href="demo.html#summary" class="text-link">Пример итогов</a></dd></div>
       </dl>
       <a href="demo.html" class="btn">Посмотреть пример работы</a>
     </div>
 
-    <figure class="task-card" aria-label="Пример карточки одной задачи">
-      <figcaption><span class="num">T-002</span> · Люди, которые следят за зданием и оборудованием.</figcaption>
-      <h3>Починить механизм у второй мачты</h3>
+    <figure class="task-card" aria-label="Пример карточки задачи">
+      <figcaption><span class="obj-label">Объект</span> Причальная мачта №&nbsp;2</figcaption>
+      <div class="task-head"><h3>Ворот мачты снова поднимает</h3><span class="chip amber">Важно</span></div>
       <div class="task-meta">
-        <div><small>Кто делает</small>Савва Кольцов</div>
+        <div><small>Шаги</small><span class="num">1 из 2</span></div>
+        <div><small>Ведёт</small>Савва Кольцов</div>
         <div><small>Сделать до</small>3 октября</div>
-        <div><small>Сейчас</small>Работа ещё идёт</div>
       </div>
-      <p class="task-history-title">Что говорили об этой задаче</p>
+      <ul class="task-steps">
+        <li class="done">Заменить подшипник</li>
+        <li>Проверить под нагрузкой</li>
+      </ul>
+      <p class="task-history-title">Что говорили на&nbsp;встречах</p>
       <ol class="task-history">
         <li>
-          <span class="when">24 сентября — Дали задание.</span>
-          <q>Савва Кольцов, поручаю: восстановить ворот причальной мачты № 2. Срок — 30 сентября.</q>
-          <small><b>Простыми словами:</b> Руководитель попросил Савву починить механизм до 30 сентября. В записи эти слова начинаются на 4-й минуте 12-й секунде.</small>
+          <span class="when">24 сентября · <span class="num">04:12</span></span>
+          <q>Савва Кольцов, поручаю: восстановить ворот причальной мачты №&nbsp;2. Срок — 30 сентября.</q>
         </li>
         <li>
-          <span class="when">1 октября — Срок изменили.</span>
+          <span class="when">1 октября · <span class="num">02:18</span></span>
           <q>Подшипник поставили. Проверка под нагрузкой — до 3 октября.</q>
-          <small><b>Простыми словами:</b> Савва сказал, что деталь уже установили. Проверка закончится до 3 октября. В записи эти слова начинаются на 2-й минуте 18-й секунде.</small>
         </li>
       </ol>
-      <p class="task-cap">Здесь видно, как менялось одно дело от встречи к встрече</p>
+      <p class="task-cap">Задача решится, когда на&nbsp;встрече скажут, что ворот работает</p>
     </figure>
   </div>
 </section>
 
 <section class="block wrap" id="pricing">
   <h2>Сколько стоит Деловойс</h2>
-  <p class="lead">Сейчас мы проверяем сервис, поэтому кабинетом можно пользоваться бесплатно. Ниже — пример цен, которые могут появиться позже. Это пока не окончательные условия продажи.</p>
+  <p class="lead">Цены предварительные.</p>
   <div class="prices">
     <div class="price"><h3>Первый вариант</h3><strong class="num">20 000 ₽</strong><span>в месяц. Можно обработать <b>20 встреч</b> за месяц.</span></div>
     <div class="price"><h3>Второй вариант</h3><strong class="num">50 000 ₽</strong><span>в месяц. Можно обработать <b>70 встреч</b> за месяц.</span></div>
@@ -144,7 +137,7 @@
 
 <section class="wrap">
   <div class="cta">
-    <div><h2>Начните с одной встречи</h2><p>Создайте кабинет. Первую встречу можно записать прямо там. На регистрацию обычно уходит около двух минут.</p></div>
+    <div><h2>Начните с одной встречи</h2><p>Создайте кабинет и&nbsp;ответьте на&nbsp;несколько вопросов о&nbsp;компании. Первую встречу можно записать прямо в&nbsp;кабинете.</p></div>
     <a href="https://app.delovoice.ru/" class="btn accent-btn">Создать кабинет</a>
   </div>
 </section>

@@ -43,6 +43,8 @@ h3{font:700 18px/1.4 var(--f-sans)}
 .wrap{max-width:1260px;margin:0 auto;padding-left:32px;padding-right:32px}
 .site-nav{max-width:1260px;margin:0 auto;height:84px;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .site-nav nav{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:600}
+.site-nav .brand img{width:285px}
+.site-footer .brand img{width:160px}
 .nav-link:hover{color:var(--action)}
 .lead{font-size:18px;color:var(--ink-muted);max-width:540px}
 .aside{font-size:15px;color:var(--ink-muted);max-width:640px;margin:28px 0 0}
@@ -64,7 +66,16 @@ h3{font:700 18px/1.4 var(--f-sans)}
 .points dd{margin:2px 0 0;font-size:15px;color:var(--ink-muted)}
 .task-card{margin:0;background:var(--surface-raised);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
 .task-card figcaption{font-size:12px;color:var(--ink-muted)}
-.task-card h3{margin:6px 0 18px}
+.task-card h3{margin:0}
+.task-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin:6px 0 18px}
+.task-head .chip{margin-top:2px}
+.obj-label{font:500 11px/1 var(--f-label);letter-spacing:.2em;text-transform:uppercase;margin-right:6px}
+.task-steps{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:6px;font-size:14px}
+.task-steps li{position:relative;padding-left:26px}
+.task-steps li::before{content:"";position:absolute;left:0;top:3px;width:14px;height:14px;border:1.5px solid var(--line-strong);border-radius:3px}
+.task-steps li.done{color:var(--ink-muted)}
+.task-steps li.done::before{background:var(--success);border-color:var(--success)}
+.task-steps li.done::after{content:"";position:absolute;left:5px;top:5px;width:4px;height:8px;border:solid var(--surface-raised);border-width:0 2px 2px 0;transform:rotate(45deg)}
 .task-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px;font-size:14px;font-weight:600}
 .task-meta>div{background:var(--surface);border-radius:8px;padding:10px 12px;min-width:0}
 .task-meta small{display:block;font-weight:400;font-size:12px;color:var(--ink-muted);margin-bottom:4px}
@@ -97,7 +108,7 @@ ul.dash{list-style:none;margin:0 0 10px;padding:0}ul.dash li{padding-left:18px;p
 .soon{display:inline-block;font:600 11px/1 var(--f-sans);color:var(--action);border:1px solid var(--action);border-radius:999px;padding:3px 8px;margin-left:6px;vertical-align:2px;white-space:nowrap}
 .text-link{color:var(--action);font-weight:600;text-decoration:underline;text-underline-offset:2px}
 .task-history-title{font-weight:700;font-size:14px;margin:0 0 12px}
-.task-history .when{display:block;font-size:13px;font-weight:600}
+.task-history .when{display:block;font-size:13px;font-weight:600}.task-history .when .num{font-weight:500;color:var(--action)}
 .task-history small b{color:var(--ink)}
 .task-cap{font-size:12px;color:var(--ink-muted);margin:16px 0 0}
 .price span b{color:var(--ink)}
@@ -109,8 +120,7 @@ ul.dash{list-style:none;margin:0 0 10px;padding:0}ul.dash li{padding-left:18px;p
 @media(max-width:640px){
 .wrap{padding-left:20px;padding-right:20px}
 .site-nav{height:68px;padding:0 20px}
-.site-nav .nav-cta{display:none}
-.site-nav .brand img{width:150px}
+.site-nav .brand img{width:210px}
 .lead{font-size:16px}
 .block{padding-top:64px}
 .steps-row{grid-template-columns:1fr;gap:20px}
@@ -365,7 +375,7 @@ body.printing a{color:inherit;text-decoration:none}body.printing .mini{display:n
 .hero-text{position:relative;width:min(560px,calc(var(--art-w) * .42 - var(--edge) - 28px))}
 .hero h1{margin:0 0 clamp(20px,3vh,30px);font-size:min(3vw,5.2vh,48px);line-height:1.04;letter-spacing:-.025em}
 .hero h1 span{display:block;white-space:nowrap}
-.hero .lead{font-size:clamp(15px,1.85vh,17px);line-height:1.5;color:var(--ink-muted);max-width:none;text-wrap:pretty}
+.hero .lead{font-size:clamp(16px,2.1vh,19px);line-height:1.5;color:var(--ink-muted);max-width:30em;text-wrap:pretty}
 .hero .lead p{margin-bottom:.45em}
 .hero ul.dash{margin:0 0 .45em}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:clamp(18px,2.8vh,28px)}
@@ -377,7 +387,6 @@ body.printing a{color:inherit;text-decoration:none}body.printing .mini{display:n
 .site-nav nav{flex:1;margin-left:clamp(32px,4vw,64px);gap:28px}
 .site-nav nav .btn:not(.primary){border:0;padding:0;min-height:0;background:none;font-size:14px}
 .site-nav nav .btn:not(.primary):hover{background:none;color:var(--action)}
-.site-nav .nav-cta{margin-left:auto}
 }
 
 /* телефон и планшет: текст сверху на небе, рисунок под ним */
