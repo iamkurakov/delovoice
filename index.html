@@ -100,14 +100,51 @@
 </section>
 
 <section class="block wrap" id="pricing">
-  <h2>Сколько стоит Деловойс</h2>
-  <p class="lead">Цены предварительные.</p>
-  <div class="prices">
-    <div class="price"><h3>Первый вариант</h3><strong class="num">20 000 ₽</strong><span>в месяц. Можно обработать <b>20 встреч</b> за месяц.</span><a href="https://app.delovoice.ru/" class="btn primary">Создать кабинет</a></div>
-    <div class="price"><h3>Второй вариант</h3><strong class="num">50 000 ₽</strong><span>в месяц. Можно обработать <b>70 встреч</b> за месяц.</span><a href="https://app.delovoice.ru/" class="btn primary">Создать кабинет</a></div>
-    <div class="price"><h3>Третий вариант</h3><strong class="num">70 000 ₽</strong><span>в месяц. Можно обработать <b>100 встреч</b> за месяц.</span><a href="https://app.delovoice.ru/" class="btn accent-btn">Создать кабинет</a></div>
+  <div class="pricing-head">
+    <h2>Сколько стоит Деловойс</h2>
+    <p class="lead">Цены предварительные. Встреча — разговор на&nbsp;рабочем месте, совещание или планёрка.</p>
   </div>
-  <p class="aside">Одна встреча длится не больше часа. Это может быть разговор на рабочем месте, совещание или обычная планёрка.</p>
+  <div class="plans">
+    <article class="plan plan-1">
+      <div class="plan-top">
+        <span class="plan-chip">Первый вариант</span>
+        <p class="plan-price"><span class="num">20 000</span>&nbsp;₽<small>/месяц</small></p>
+      </div>
+      <p class="plan-desc"><b>20 встреч</b> в&nbsp;месяц</p>
+      <a href="https://app.delovoice.ru/" class="btn plan-btn">Создать кабинет</a>
+      <ul class="plan-list">
+        <li>Встреча — до&nbsp;одного часа</li>
+        <li>Задачи и&nbsp;сроки со&nbsp;словами участников</li>
+        <li>Итоги за&nbsp;день, неделю и&nbsp;год</li>
+      </ul>
+    </article>
+    <article class="plan plan-2">
+      <div class="plan-top">
+        <span class="plan-chip">Второй вариант</span>
+        <p class="plan-price"><span class="num">50 000</span>&nbsp;₽<small>/месяц</small></p>
+      </div>
+      <p class="plan-desc"><b>70 встреч</b> в&nbsp;месяц</p>
+      <a href="https://app.delovoice.ru/" class="btn plan-btn">Создать кабинет</a>
+      <ul class="plan-list">
+        <li>Встреча — до&nbsp;одного часа</li>
+        <li>Задачи и&nbsp;сроки со&nbsp;словами участников</li>
+        <li>Итоги за&nbsp;день, неделю и&nbsp;год</li>
+      </ul>
+    </article>
+    <article class="plan plan-3">
+      <div class="plan-top">
+        <span class="plan-chip">Третий вариант</span>
+        <p class="plan-price"><span class="num">70 000</span>&nbsp;₽<small>/месяц</small></p>
+      </div>
+      <p class="plan-desc"><b>100 встреч</b> в&nbsp;месяц</p>
+      <a href="https://app.delovoice.ru/" class="btn plan-btn accent-btn">Создать кабинет</a>
+      <ul class="plan-list">
+        <li>Встреча — до&nbsp;одного часа</li>
+        <li>Задачи и&nbsp;сроки со&nbsp;словами участников</li>
+        <li>Итоги за&nbsp;день, неделю и&nbsp;год</li>
+      </ul>
+    </article>
+  </div>
 </section>
 
 <section class="wrap">
@@ -133,5 +170,25 @@
   <img src="assets/footer-plants-1400.jpg" alt="" width="2160" height="451" loading="lazy" decoding="async">
 </picture>
 
+<script>
+/* свет на цветной плашке тарифа: за курсором на компьютере, при прокрутке на телефоне */
+(function(){
+  var tops=[].slice.call(document.querySelectorAll('.plan-top'));
+  if(!tops.length||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var fine=matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if(fine){
+    tops.forEach(function(el){
+      var card=el.closest('.plan');
+      card.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px');el.classList.add('lit')});
+      card.addEventListener('pointerleave',function(){el.classList.remove('lit')});
+    });
+  }else{
+    var ticking=false;
+    function upd(){ticking=false;var vh=innerHeight;tops.forEach(function(el){var r=el.getBoundingClientRect();var t=(vh-r.top)/(vh+r.height);if(t<0||t>1){el.classList.remove('lit');return}
+      el.style.setProperty('--mx',(r.width*(0.1+0.8*t))+'px');el.style.setProperty('--my',(r.height*(0.2+0.6*t))+'px');el.classList.add('lit')})}
+    addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(upd)}},{passive:true});upd();
+  }
+})();
+</script>
 </body>
 </html>
