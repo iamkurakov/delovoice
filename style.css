@@ -373,7 +373,7 @@ body.printing a{color:inherit;text-decoration:none}body.printing .mini{display:n
 .site-nav{position:absolute;top:0;left:0;right:0;z-index:3;max-width:none;padding:0 var(--edge)}
 
 .hero{position:relative;isolation:isolate;background:var(--sky);min-height:var(--hero-h);display:flex;align-items:flex-start;
-  padding:clamp(112px,15vh,168px) var(--edge) clamp(230px,30vh,320px);overflow:hidden}
+  padding:calc(clamp(112px,15vh,168px) + 10px) var(--edge) clamp(230px,30vh,320px);overflow:hidden}
 .hero-art{position:absolute;inset:0;z-index:-1}
 .hero-art img{width:100%;height:100%;object-fit:cover;object-position:0 62%;display:block}
 .hero-text{position:relative;width:min(560px,calc(var(--art-w) * .42 - var(--edge) - 28px))}
@@ -395,7 +395,7 @@ body.printing a{color:inherit;text-decoration:none}body.printing .mini{display:n
 
 /* телефон и планшет: текст сверху на небе, рисунок под ним */
 @media(max-width:900px){
-.hero{flex-direction:column;align-items:stretch;min-height:0;padding:96px 0 0;background:var(--sky-tall)}
+.hero{flex-direction:column;align-items:stretch;min-height:0;padding:106px 0 0;background:var(--sky-tall)}
 .hero-text{order:1;width:auto;max-width:680px;padding:0 var(--edge);z-index:1}
 .hero-art{order:2;position:relative;inset:auto;z-index:0;margin-top:calc(-100vw * 1672 / 941 * .27);
   -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 18%);mask-image:linear-gradient(180deg,transparent 0,#000 18%)}
@@ -406,7 +406,7 @@ body.printing a{color:inherit;text-decoration:none}body.printing .mini{display:n
 @media(min-width:641px) and (max-width:900px){.hero-art{margin-top:calc(-100vw * 1672 / 941 * .32)}}
 @media(max-width:640px){
 .site-nav{padding:0 20px}
-.hero{padding-top:84px}
+.hero{padding-top:94px}
 .hero-text{padding:0 20px}
 .hero-actions .btn{flex:1;padding:0 12px}
 }
@@ -470,3 +470,7 @@ body.printing a{color:inherit;text-decoration:none}body.printing .mini{display:n
 @media(max-width:1500px){.steps-row li{font-size:15px;padding:18px 20px}.steps-row li img{width:56px;height:56px}}
 @media(max-width:1180px){.steps-row{grid-template-columns:1fr;max-width:560px}}
 @media(max-width:640px){.steps-row{max-width:none}.steps-row li{padding:18px}.steps-row li img{width:52px;height:52px}}
+
+/* рисунок внизу страницы */
+.footer-art{display:block;line-height:0}
+.footer-art img{display:block;width:100%;height:auto;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 12%);mask-image:linear-gradient(to bottom,transparent 0,#000 12%)}
