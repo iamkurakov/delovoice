@@ -604,3 +604,10 @@ html,body{overflow-x:hidden}
 .plan-3 .plan-top::after{background:radial-gradient(200px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.10),rgba(255,255,255,0) 70%)}
 @media(max-width:640px){.hero h1{text-wrap:balance}.hero-actions .btn{white-space:nowrap}}
 @media(max-width:380px){.hero-actions .btn{padding:0 10px;font-size:14px}}
+
+/* крестики в таблице — отчётливые красные */
+.c-no{background:#fbd9d0 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23d1432f' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M6.8 6.8l6.4 6.4M13.2 6.8l-6.8 6.8'/%3E%3C/svg%3E") center/18px no-repeat}
+@media(max-width:640px){.c-no{background-size:15px}}
+/* рисунок над подвалом */
+.footer-art+.site-footer{border-top:0}
+.footer-art{margin-top:-24px}
