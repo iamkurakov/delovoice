@@ -611,3 +611,11 @@ html,body{overflow-x:hidden}
 /* рисунок над подвалом */
 .footer-art+.site-footer{border-top:0}
 .footer-art{margin-top:-24px}
+
+/* кнопки в блоке «Все рабочие дела» */
+.product-actions{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:640px){.product-actions .btn{flex:1;padding:0 12px;white-space:nowrap}}
+/* шапка: «Личный кабинет» в одну строку на телефоне */
+.site-nav nav .btn{white-space:nowrap}
+@media(max-width:640px){.site-nav .brand img{width:170px}.site-nav nav .btn{min-height:40px;padding:0 16px;font-size:14px}}
+@media(max-width:370px){.site-nav .brand img{width:150px}.site-nav nav .btn{padding:0 12px;font-size:13px}}
