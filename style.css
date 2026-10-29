@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&family=Manrope:wght@400;500;600;700&family=Jost:wght@500&family=JetBrains+Mono:wght@400;500&display=swap');
 /* Деловойс — дизайн-система: палитра Palladian / Oatmeal / Blue Fantastic / Abyssal / Burning Flame / Truffle */
 :root{
---surface:#eee9df;--surface-raised:#f7f4ee;--surface-sunken:#e3ddd0;--line:#d9d2c4;--line-strong:#8c8576;
+--surface:#fbedd4;--surface-raised:#fff8ec;--surface-sunken:#f4e0bf;--line:#ecd7b4;--line-strong:#b89d78;--panel:#f7e3c2;
 --ink:#2c3b4d;--ink-muted:#5b6472;--ink-inverse:#eee9df;
---action:#a35139;--action-hover:#8e4430;--on-action:#eee9df;
+--action:#a35139;--action-hover:#8e4430;--on-action:#fff6e8;
 --accent:#ffb162;--on-accent:#1b2632;--accent-soft:#f8dcbc;
 --success:#2f6b57;--success-soft:#dce9e2;--warning:#8a5a00;--warning-soft:#f6e7c8;--danger:#a1283f;--danger-soft:#f3dcdf;--info:#2e5e8c;--info-soft:#dce5ef;
 --oatmeal:#c9c1b1;--abyssal:#1b2632;--truffle:#a35139;--focus:#2c3b4d;
@@ -409,4 +409,55 @@ body.printing a{color:inherit;text-decoration:none}body.printing .mini{display:n
 .hero{padding-top:84px}
 .hero-text{padding:0 20px}
 .hero-actions .btn{flex:1;padding:0 12px}
+}
+
+/* ===== единая тёплая схема сайта ===== */
+.wrap{max-width:none;padding-left:var(--edge);padding-right:var(--edge)}
+.site-footer .wrap{padding-left:var(--edge);padding-right:var(--edge)}
+
+/* кнопки: мягкие, тёплые */
+.btn,button{border-radius:999px}
+.site .btn{min-height:48px;padding:0 26px;font-size:15px;background:var(--surface-raised);border:1px solid rgba(163,81,57,.28);color:var(--ink);box-shadow:0 1px 0 rgba(255,255,255,.6) inset}
+.site .btn:hover{background:#fff;border-color:rgba(163,81,57,.5)}
+.site .btn.primary{background:var(--action);border-color:var(--action);color:var(--on-action);box-shadow:0 6px 18px -8px rgba(163,81,57,.65)}
+.site .btn.primary:hover{background:var(--action-hover);border-color:var(--action-hover)}
+.site .btn.accent-btn{background:var(--accent);border-color:var(--accent);color:var(--on-accent);box-shadow:0 6px 18px -8px rgba(255,140,40,.7)}
+.site .btn.accent-btn:hover{background:#ffc587;border-color:#ffc587}
+.site-nav nav .btn:not(.primary){box-shadow:none}
+
+/* «Записывай свои деловые встречи» — компактно, три тёплые плашки */
+#how{padding-top:72px}
+#how h2{margin-bottom:0}
+.steps-row{margin-top:28px;gap:16px}
+.steps-row li{border:0;border-radius:20px;background:var(--surface-raised);padding:24px 26px;font:600 17px/1.5 var(--f-sans)}
+
+/* «Все рабочие дела» — отдельная панель со смартфоном */
+#product{padding-top:72px}
+.product{background:var(--panel);border-radius:32px;padding:56px clamp(28px,5vw,72px) 0;gap:clamp(32px,5vw,72px);align-items:end;overflow:hidden}
+.product-text{padding-bottom:56px;align-self:center}
+.product-text h2{margin-bottom:0}
+.points{margin:24px 0 32px;gap:16px}
+.product-phone img{max-width:400px;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%)}
+
+/* цены */
+#pricing{padding-top:88px}
+.price{background:var(--surface-raised)}
+.price:nth-child(2){background:#f8d3a6}
+
+.cta{border-radius:28px;background:var(--abyssal)}
+.site-footer{border-top-color:var(--line)}
+
+@media(max-width:900px){
+.product{padding:36px 28px 0}
+.product-text{padding-bottom:0}
+.product-phone img{max-width:320px}
+}
+@media(max-width:640px){
+.wrap,.site-footer .wrap{padding-left:16px;padding-right:16px}
+#how,#product{padding-top:56px}
+#pricing{padding-top:64px}
+.steps-row li{padding:20px;font-size:16px}
+.product{border-radius:24px;padding:28px 20px 0}
+.product-phone img{max-width:280px}
+.site .btn{min-height:46px;padding:0 18px}
 }
