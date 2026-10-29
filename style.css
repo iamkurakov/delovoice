@@ -512,3 +512,100 @@ body.printing a{color:inherit;text-decoration:none}body.printing .mini{display:n
 .plan-list li{padding-left:26px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23a35139' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 10.5l3.5 3.5 7.5-8'/%3E%3C/svg%3E") left 1px/18px no-repeat}
 @media(max-width:900px){.plans{grid-template-columns:1fr;max-width:440px;gap:16px}.plan-2{transform:none}}
 @media(max-width:640px){.pricing-head{text-align:left}.pricing-head .lead{margin:0}.plan-price{font-size:30px}.plan-top{min-height:130px}}
+
+/* ===== общие для новых разделов ===== */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#who,#quote,#compare,#faq,#about{padding-top:88px}
+#who h2,#quote h2,#compare h2,#faq h2,#about h2{margin-bottom:0}
+#quote .lead,#compare .lead{margin-top:12px;max-width:620px;font-size:16px}
+
+/* для кого */
+.who-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:28px}
+.who-card{background:var(--surface-raised);border-radius:22px;padding:24px 22px;position:relative;overflow:hidden}
+.who-card::before{content:"";display:block;width:36px;height:4px;border-radius:4px;background:var(--action);margin-bottom:18px}
+.who-card:nth-child(2)::before{background:var(--accent)}.who-card:nth-child(3)::before{background:var(--success)}.who-card:nth-child(4)::before{background:var(--ink)}
+.who-card h3{font:700 17px/1.3 var(--f-sans);margin:0 0 8px}
+.who-card p{margin:0;font-size:15px;color:var(--ink-muted)}
+
+/* цитата с таймкодом */
+.quote-flow{display:grid;grid-template-columns:minmax(0,1.1fr) 40px minmax(0,1fr);grid-template-areas:"q1 ar task" "q2 . task";gap:14px 18px;margin-top:28px;max-width:1080px;align-items:center}
+.q-card{margin:0;background:var(--surface-raised);border-radius:20px;padding:18px 22px}
+.q-card:first-child{grid-area:q1}.q-later{grid-area:q2;opacity:.9}
+.q-card figcaption{font-size:13px;font-weight:600;color:var(--ink-muted)}.q-card figcaption .num{color:var(--action);font-weight:500}
+.q-card blockquote{margin:8px 0 0;background:var(--accent-soft);border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.5}
+.q-arrow{grid-area:ar;width:32px;height:32px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%23a35139' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 16.5c7-.6 15-.4 23-.5'/%3E%3Cpath d='M19.5 8.5 27 16l-7.5 7.5'/%3E%3C/svg%3E") center/contain no-repeat;justify-self:center}
+.q-task{grid-area:task;background:var(--abyssal);color:var(--ink-inverse);border-radius:22px;padding:24px 26px;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.q-label{font:500 11px/1 var(--f-label);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.q-task b{display:block;font:600 19px/1.35 var(--f-sans);margin:10px 0 16px}
+.q-task dl{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.q-task dl div{background:rgba(255,248,236,.08);border-radius:12px;padding:10px 12px}
+.q-task dt{font-size:12px;opacity:.7}.q-task dd{margin:2px 0 0;font-size:14px;font-weight:600}
+#quote .note{margin-top:14px}
+
+/* таблица сравнения */
+.cmp-wrap{margin-top:28px;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:24px;background:var(--surface-raised);max-width:1080px}
+.cmp{width:100%;border-collapse:separate;border-spacing:0;min-width:620px;font-size:15px}
+.cmp td{width:15.5%}
+.cmp th,.cmp td{padding:16px 14px;text-align:center;border-bottom:1px solid var(--line);background:transparent;letter-spacing:0;text-transform:none;white-space:normal}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+.cmp thead th{font:600 14px/1.25 var(--f-sans);color:var(--ink-muted);padding-top:22px;padding-bottom:14px;vertical-align:bottom;border-bottom:1px solid var(--line-strong)}
+.cmp tbody th{text-align:left;font:600 15px/1.4 var(--f-sans);color:var(--ink);padding-left:24px;width:38%}
+.cmp thead th:first-child{width:38%}
+.cmp .cmp-us{background:rgba(255,177,98,.18)}
+.cmp thead .cmp-us{color:var(--action);font:700 15px/1.25 var(--f-sans);border-top-left-radius:0}
+.cmp-yes,.cmp-no{display:inline-block;width:28px;height:28px;border-radius:50%;vertical-align:middle}
+.cmp-yes{background:var(--success) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23fff8ec' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 10.5l3.2 3.2L15 7'/%3E%3C/svg%3E") center/18px no-repeat}
+.cmp-us .cmp-yes{background-color:var(--action)}
+.cmp-no{background:var(--surface-sunken) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23b89d78' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M6.5 6.5l7 7M13.5 6.5l-7 7'/%3E%3C/svg%3E") center/18px no-repeat}
+.cmp-part{display:inline-block;font-size:12.5px;font-weight:600;color:var(--warning);background:var(--warning-soft);border-radius:999px;padding:4px 10px}
+@media(max-width:640px){
+.cmp{min-width:0;table-layout:fixed}
+.cmp th,.cmp td{padding:10px 4px}
+.cmp td,.cmp thead th:not(:first-child){width:44px}
+.cmp tbody th,.cmp thead th:first-child{width:auto;padding-left:14px;font-size:13.5px}
+.cmp thead th:not(:first-child){writing-mode:vertical-rl;transform:rotate(180deg);text-align:left;vertical-align:middle;padding:14px 0;font-size:12.5px;height:118px}
+.cmp-yes,.cmp-no{width:24px;height:24px;background-size:15px}
+.cmp-part{font-size:0;width:24px;height:24px;padding:0;border-radius:50%;vertical-align:middle;position:relative}
+.cmp-part::after{content:"~";font:700 15px/24px var(--f-sans);color:var(--warning);position:absolute;inset:0;text-align:center}
+.cmp-note{display:block}
+}
+
+/* вопросы */
+.faq{display:grid;gap:12px;margin-top:28px;max-width:860px}
+.faq-item{background:var(--surface-raised);border-radius:20px;transition:background-color .25s,box-shadow .25s}
+.faq-item.open{box-shadow:0 18px 40px -26px rgba(120,70,30,.45)}
+.faq-item h3{margin:0}
+.site .faq-q{width:100%;min-height:0;justify-content:space-between;text-align:left;white-space:normal;background:none;border:0;border-radius:20px;padding:20px 22px;font:600 17px/1.4 var(--f-sans);color:var(--ink);gap:16px;box-shadow:none}
+.site .faq-q:hover{background:none;color:var(--action)}
+.faq-ico{flex:none;position:relative;width:32px;height:32px;border-radius:50%;background:var(--accent-soft);transition:transform .35s cubic-bezier(.2,.7,.2,1),background-color .25s}
+.faq-ico::before,.faq-ico::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;margin:-1px 0 0 -6px;border-radius:2px;background:var(--action)}
+.faq-ico::after{transform:rotate(90deg)}
+.faq-item.open .faq-ico{transform:rotate(135deg);background:var(--accent)}
+.faq-item.open .faq-ico::before,.faq-item.open .faq-ico::after{background:var(--on-accent)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.2,.7,.2,1)}
+.faq-a>div{overflow:hidden}
+.faq-a p{margin:0;padding:0 22px 22px;font-size:15px;line-height:1.6;color:var(--ink-muted);max-width:680px;opacity:0;transform:translateY(-6px);transition:opacity .3s,transform .4s}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-item.open .faq-a p{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.faq-a,.faq-a p,.faq-ico{transition:none}}
+
+/* о проекте */
+.about{margin-top:20px;max-width:720px;background:var(--surface-raised);border-radius:24px;padding:26px 28px}
+.about p{margin:0 0 12px;font-size:16px;color:var(--ink-muted)}.about p:last-child{margin:0}
+
+.plan-chip{margin:0}
+
+@media(max-width:1100px){.who-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){
+.quote-flow{grid-template-columns:1fr;grid-template-areas:"q1" "ar" "task" "q2";gap:12px}
+.q-arrow{transform:rotate(90deg)}
+}
+@media(max-width:640px){
+#who,#quote,#compare,#faq,#about{padding-top:60px}
+.who-grid{grid-template-columns:1fr;gap:12px}
+.who-card{padding:20px}
+.site .faq-q{padding:18px;font-size:16px}.faq-a p{padding:0 18px 18px}
+.about{padding:20px}
+.q-task{padding:20px}
+}
+.cmp-note{display:none;margin:12px 0 0;font-size:13px;color:var(--ink-muted)}

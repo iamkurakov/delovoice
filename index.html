@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Деловойс помнит всё, о чём говорилось на встречах</title>
+<title>Деловойс — контроль поручений с планёрок и совещаний</title>
 <meta name="description" content="Деловойс помнит всё, о чём говорилось на встречах. Ведите встречу как вам удобно: он превратит разговор в задачи со сроками и поможет прийти к результату.">
 <link rel="canonical" href="https://delovoice.ru/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="Деловойс">
-<meta property="og:title" content="Деловойс помнит всё, о чём говорилось на встречах">
+<meta property="og:title" content="Деловойс — контроль поручений с планёрок и совещаний">
 <meta property="og:description" content="Деловойс помнит всё, о чём говорилось на встречах. Ведите встречу как вам удобно: он превратит разговор в задачи со сроками и поможет прийти к результату.">
 <meta property="og:url" content="https://delovoice.ru/">
 <meta property="og:image" content="https://delovoice.ru/assets/share-1200x630.jpg">
@@ -23,7 +23,7 @@
 <meta property="og:image:height" content="800">
 <meta property="vk:image" content="https://delovoice.ru/assets/share-vk-1074x480.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Деловойс помнит всё, о чём говорилось на встречах">
+<meta name="twitter:title" content="Деловойс — контроль поручений с планёрок и совещаний">
 <meta name="twitter:description" content="Деловойс помнит всё, о чём говорилось на встречах. Ведите встречу как вам удобно: он превратит разговор в задачи со сроками и поможет прийти к результату.">
 <meta name="twitter:image" content="https://delovoice.ru/assets/share-1200x600.jpg">
 <meta name="twitter:image:alt" content="Поля с микрофонами вместо цветов и человек на тропинке между ними">
@@ -34,6 +34,7 @@
 <link rel="preload" as="image" type="image/webp" imagesrcset="assets/hero-tall-620.webp 620w, assets/hero-tall-941.webp 941w" imagesizes="100vw" media="(max-width: 900px)">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Деловойс","alternateName":"Delovoice","url":"https://delovoice.ru/","applicationCategory":"BusinessApplication","operatingSystem":"Web","inLanguage":"ru","description":"Деловойс помнит всё, о чём говорилось на встречах. Ведите встречу как вам удобно: он превратит разговор в задачи со сроками и поможет прийти к результату."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Где хранятся мои записи и кто их видит?", "acceptedAnswer": {"@type": "Answer", "text": "Записи, текст и задачи хранятся на серверах в России. У каждой компании своя отдельная база, другие компании её не видят. Для расшифровки запись передаётся сервису распознавания речи, текст для разбора — нейросети, которая работает на серверах в России. Мы не продаём данные и не используем их для рекламы. Аудио хранится не больше 90 дней, потом удаляется, текст остаётся."}}, {"@type": "Question", "name": "Нейросеть может что-то выдумать?", "acceptedAnswer": {"@type": "Answer", "text": "У каждой задачи есть цитата со встречи и время в записи. Если подходящих слов в тексте нет, задача не появляется. Сроки, суммы и имена берутся только из разговора: не назвали срок — задача остаётся без срока. Если сервис не уверен, он ставит пометку «проверьте». Неудачный разбор можно отменить целиком."}}, {"@type": "Question", "name": "Нейросеть учится на наших разговорах?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Она работает по инструкции и не обучается на ваших встречах. Всё, что сервис «помнит» о компании, — это ваш список дел и ответы о компании в кабинете."}}, {"@type": "Question", "name": "Нужно ли согласие сотрудников на запись?", "acceptedAnswer": {"@type": "Answer", "text": "Записывать встречи или нет, решает владелец кабинета. Он предупреждает участников о записи и отвечает за то, чтобы запись была законной. Сервис не создаёт и не хранит голосовые отпечатки для узнавания людей."}}, {"@type": "Question", "name": "Что будет с данными, если я перестану пользоваться?", "acceptedAnswer": {"@type": "Answer", "text": "Данные можно удалить по вашему письму. После закрытия кабинета они удаляются в течение 30 дней, если закон не требует хранить их дольше. Подробно — в правилах обработки личных данных."}}]}</script>
 <script>
 /* старые адреса вида delovoice.ru/#login или #overview вели в демо — переадресуем */
 (function(h){var keep={home:1,how:1,product:1,pricing:1,features:'product',presentation:'how'};if(!h)return;if(keep[h]){if(typeof keep[h]==='string')location.replace('#'+keep[h]);return;}location.replace('demo.html#'+(h==='login'?'overview':h));})(location.hash.slice(1));
@@ -45,6 +46,7 @@
   <a href="/" class="brand" aria-label="На главную страницу Деловойс"><img src="assets/logo-dark.png" alt="Деловойс" width="285" height="29"></a>
   <nav aria-label="Основное меню">
     <a href="#pricing" class="nav-link">Цены</a>
+    <a href="#faq" class="nav-link">Вопросы</a>
     <a href="demo.html" class="nav-link">Демо-версия</a>
     <a href="https://app.delovoice.ru/#in" class="btn">Войти</a>
   </nav>
@@ -70,6 +72,16 @@
   </div>
 </section>
 
+<section class="block wrap" id="who">
+  <h2>Для кого Деловойс</h2>
+  <div class="who-grid">
+    <article class="who-card"><h3>Собственник производства или сервиса</h3><p>Каждый день планёрки, а&nbsp;поручения теряются. К&nbsp;нерешённому возвращаются, только если кто-то вспомнил.</p></article>
+    <article class="who-card"><h3>Отдел продаж</h3><p>Договорённости с&nbsp;клиентами и&nbsp;история переговоров нигде не&nbsp;записаны. После разбора сделок всё остаётся в&nbsp;головах.</p></article>
+    <article class="who-card"><h3>Стройка и&nbsp;выездные бригады</h3><p>Планёрка проходит на&nbsp;объекте, в&nbsp;шуме. Поручения не&nbsp;доходят до&nbsp;офиса, сроки срываются.</p></article>
+    <article class="who-card"><h3>Новый руководитель</h3><p>Память о&nbsp;договорённостях была у&nbsp;одного человека. Теперь вся история дел уже в&nbsp;кабинете.</p></article>
+  </div>
+</section>
+
 <section class="block wrap" id="how">
   <h2>Контролируй дела в&nbsp;Деловойс</h2>
   <ol class="steps-row">
@@ -77,6 +89,28 @@
     <li><span>Мы превращаем голоса в&nbsp;текст. Текст автоматически разбирается на&nbsp;задачи, ответственных, сроки.</span><img src="assets/icon-text.webp" alt="" width="76" height="76" loading="lazy" decoding="async"></li>
     <li><span>Все задания суммируются в&nbsp;результаты за&nbsp;день, за&nbsp;неделю, за&nbsp;год.</span><img src="assets/icon-cal.webp" alt="" width="76" height="76" loading="lazy" decoding="async"></li>
   </ol>
+</section>
+
+<section class="block wrap" id="quote">
+  <h2>Слова со&nbsp;встречи у&nbsp;каждой задачи</h2>
+  <p class="lead">Цитата и&nbsp;время в&nbsp;записи, когда это сказали. Задачу всегда можно проверить: кто, что и&nbsp;когда пообещал.</p>
+  <div class="quote-flow">
+    <figure class="q-card">
+      <figcaption>24 сентября · <span class="num">04:12</span></figcaption>
+      <blockquote>«Савва Кольцов, поручаю: восстановить ворот причальной мачты №&nbsp;2. Срок — 30&nbsp;сентября.»</blockquote>
+    </figure>
+    <span class="q-arrow" aria-hidden="true"></span>
+    <div class="q-task">
+      <span class="q-label">Задача</span>
+      <b>Восстановить ворот причальной мачты №&nbsp;2</b>
+      <dl><div><dt>Ведёт</dt><dd>Савва Кольцов</dd></div><div><dt>Срок</dt><dd>30 сентября → 3 октября</dd></div></dl>
+    </div>
+    <figure class="q-card q-later">
+      <figcaption>1 октября · <span class="num">02:18</span></figcaption>
+      <blockquote>«Подшипник поставили. Проверка под нагрузкой — до 3&nbsp;октября.»</blockquote>
+    </figure>
+  </div>
+  <p class="note">Пример на&nbsp;вымышленной верфи «Северный ветер».</p>
 </section>
 
 <section class="block wrap" id="product">
@@ -99,6 +133,24 @@
   </div>
 </section>
 
+<section class="block wrap" id="compare">
+  <h2>Чем Деловойс отличается</h2>
+  <p class="lead">Транскрибатор и&nbsp;ИИ-диктофон дают текст одной встречи. В&nbsp;CRM и&nbsp;таск-трекер задачи вносят руками. Деловойс сверяет каждую встречу с&nbsp;прошлыми.</p>
+  <div class="cmp-wrap">
+    <table class="cmp">
+      <thead><tr><th scope="col"><span class="sr">Возможность</span></th><th scope="col" class="cmp-us">Деловойс</th><th scope="col">Транскрибатор</th><th scope="col">ИИ-диктофон</th><th scope="col">CRM, таск-трекер</th></tr></thead>
+      <tbody>
+      <tr><th scope="row">Текст встречи</th><td class="cmp-us"><span class="cmp-yes" role="img" aria-label="есть"></span></td><td><span class="cmp-yes" role="img" aria-label="есть"></span></td><td><span class="cmp-yes" role="img" aria-label="есть"></span></td><td><span class="cmp-no" role="img" aria-label="нет"></span></td></tr>
+      <tr><th scope="row">Задачи и&nbsp;сроки из&nbsp;разговора</th><td class="cmp-us"><span class="cmp-yes" role="img" aria-label="есть"></span></td><td><span class="cmp-no" role="img" aria-label="нет"></span></td><td><span class="cmp-yes" role="img" aria-label="есть"></span></td><td><span class="cmp-part">вручную</span></td></tr>
+      <tr><th scope="row">У&nbsp;каждой задачи — слова со&nbsp;встречи и&nbsp;время</th><td class="cmp-us"><span class="cmp-yes" role="img" aria-label="есть"></span></td><td><span class="cmp-no" role="img" aria-label="нет"></span></td><td><span class="cmp-part">частично</span></td><td><span class="cmp-no" role="img" aria-label="нет"></span></td></tr>
+      <tr><th scope="row">Помнит, что поручали на&nbsp;прошлых встречах</th><td class="cmp-us"><span class="cmp-yes" role="img" aria-label="есть"></span></td><td><span class="cmp-no" role="img" aria-label="нет"></span></td><td><span class="cmp-no" role="img" aria-label="нет"></span></td><td><span class="cmp-part">вручную</span></td></tr>
+      <tr><th scope="row">Показывает, если проблема вернулась</th><td class="cmp-us"><span class="cmp-yes" role="img" aria-label="есть"></span></td><td><span class="cmp-no" role="img" aria-label="нет"></span></td><td><span class="cmp-no" role="img" aria-label="нет"></span></td><td><span class="cmp-no" role="img" aria-label="нет"></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cmp-note">~ — частично или вручную.</p>
+</section>
+
 <section class="block wrap" id="pricing">
   <div class="pricing-head">
     <h2>Сколько стоит Деловойс</h2>
@@ -107,7 +159,7 @@
   <div class="plans">
     <article class="plan plan-1">
       <div class="plan-top">
-        <span class="plan-chip">Первый вариант</span>
+        <h3 class="plan-chip">Первый вариант</h3>
         <p class="plan-price"><span class="num">20 000</span>&nbsp;₽<small>/месяц</small></p>
       </div>
       <p class="plan-desc"><b>20 встреч</b> в&nbsp;месяц</p>
@@ -120,7 +172,7 @@
     </article>
     <article class="plan plan-2">
       <div class="plan-top">
-        <span class="plan-chip">Второй вариант</span>
+        <h3 class="plan-chip">Второй вариант</h3>
         <p class="plan-price"><span class="num">50 000</span>&nbsp;₽<small>/месяц</small></p>
       </div>
       <p class="plan-desc"><b>70 встреч</b> в&nbsp;месяц</p>
@@ -133,7 +185,7 @@
     </article>
     <article class="plan plan-3">
       <div class="plan-top">
-        <span class="plan-chip">Третий вариант</span>
+        <h3 class="plan-chip">Третий вариант</h3>
         <p class="plan-price"><span class="num">70 000</span>&nbsp;₽<small>/месяц</small></p>
       </div>
       <p class="plan-desc"><b>100 встреч</b> в&nbsp;месяц</p>
@@ -147,9 +199,43 @@
   </div>
 </section>
 
+<section class="block wrap" id="faq">
+  <h2>Неудобные вопросы</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <h3><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">Где хранятся мои записи и кто их видит?<span class="faq-ico" aria-hidden="true"></span></button></h3>
+      <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p>Записи, текст и задачи хранятся на серверах в России. У каждой компании своя отдельная база, другие компании её не видят. Для расшифровки запись передаётся сервису распознавания речи, текст для разбора — нейросети, которая работает на серверах в России. Мы не продаём данные и не используем их для рекламы. Аудио хранится не больше 90 дней, потом удаляется, текст остаётся.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <h3><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">Нейросеть может что-то выдумать?<span class="faq-ico" aria-hidden="true"></span></button></h3>
+      <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div><p>У каждой задачи есть цитата со встречи и время в записи. Если подходящих слов в тексте нет, задача не появляется. Сроки, суммы и имена берутся только из разговора: не назвали срок — задача остаётся без срока. Если сервис не уверен, он ставит пометку «проверьте». Неудачный разбор можно отменить целиком.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <h3><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">Нейросеть учится на наших разговорах?<span class="faq-ico" aria-hidden="true"></span></button></h3>
+      <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p>Нет. Она работает по инструкции и не обучается на ваших встречах. Всё, что сервис «помнит» о компании, — это ваш список дел и ответы о компании в кабинете.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <h3><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">Нужно ли согласие сотрудников на запись?<span class="faq-ico" aria-hidden="true"></span></button></h3>
+      <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p>Записывать встречи или нет, решает владелец кабинета. Он предупреждает участников о записи и отвечает за то, чтобы запись была законной. Сервис не создаёт и не хранит голосовые отпечатки для узнавания людей.</p></div></div>
+    </div>
+    <div class="faq-item">
+      <h3><button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">Что будет с данными, если я перестану пользоваться?<span class="faq-ico" aria-hidden="true"></span></button></h3>
+      <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div><p>Данные можно удалить по вашему письму. После закрытия кабинета они удаляются в течение 30 дней, если закон не требует хранить их дольше. Подробно — в правилах обработки личных данных.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block wrap" id="about">
+  <h2>О проекте</h2>
+  <div class="about">
+    <p>Деловойс делают в&nbsp;Барнауле. Продукт вырос из&nbsp;обычной задачи: на&nbsp;планёрках договариваются о&nbsp;десятках дел, а&nbsp;через неделю половину никто не&nbsp;помнит.</p>
+    <p>Сейчас сервис проверяют на&nbsp;двух предприятиях Алтайского края: в&nbsp;пищевом производстве и&nbsp;в&nbsp;компании по&nbsp;продаже и&nbsp;сервису электроинструмента.</p>
+  </div>
+</section>
+
 <section class="wrap">
   <div class="cta">
-    <div><h2>Начните с одной встречи</h2><p>Создайте кабинет и&nbsp;ответьте на&nbsp;несколько вопросов о&nbsp;компании. Первую встречу можно записать прямо в&nbsp;кабинете.</p></div>
+    <div><h2>Начните с одной встречи</h2><p>Создайте кабинет. Первую встречу можно записать прямо в&nbsp;нём.</p></div>
     <a href="https://app.delovoice.ru/" class="btn accent-btn">Создать кабинет</a>
   </div>
 </section>
@@ -189,6 +275,10 @@
     addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(upd)}},{passive:true});upd();
   }
 })();
+</script>
+<script>
+/* раскрытие вопросов */
+document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!o));b.closest('.faq-item').classList.toggle('open',!o)})});
 </script>
 </body>
 </html>
