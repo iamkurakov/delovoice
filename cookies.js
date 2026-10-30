@@ -1,11 +1,19 @@
 /* Деловойс: согласие на cookie и Яндекс Метрику.
    Метрика загружается только после нажатия «Согласен».
-   Выбор хранится в браузере посетителя (localStorage, ключ dv_cookie: yes / no). */
+   Выбор хранится в браузере посетителя (localStorage, ключ dv_cookie: yes / no) и в cookie dv_cookie
+   на весь домен delovoice.ru — тот же выбор действует на странице входа и в кабинетах. */
 (function(){
   var KEY = 'dv_cookie', ID = 113913973;
 
-  function read(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } }
-  function save(v){ try { localStorage.setItem(KEY, v); } catch(e){} }
+  var DOMAIN = /(^|\.)delovoice\.ru$/.test(location.hostname) ? '; domain=delovoice.ru' : '';
+  function read(){
+    var m = document.cookie.match(/(?:^|;\s*)dv_cookie=(yes|no)(?:;|$)/); if(m) return m[1];
+    try { return localStorage.getItem(KEY); } catch(e){ return null; }
+  }
+  function save(v){
+    try { localStorage.setItem(KEY, v); } catch(e){}
+    try { document.cookie = KEY + '=' + v + DOMAIN + '; path=/; max-age=31536000; samesite=lax' + (location.protocol === 'https:' ? '; secure' : ''); } catch(e){}
+  }
 
   function loadMetrika(){
     (function(m,e,t,r,i,k,a){
