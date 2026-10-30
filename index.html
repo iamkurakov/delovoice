@@ -39,8 +39,32 @@
 /* старые адреса вида delovoice.ru/#login или #overview вели в демо — переадресуем */
 (function(h){var keep={home:1,how:1,product:1,pricing:1,features:'product',presentation:'how'};if(!h)return;if(keep[h]){if(typeof keep[h]==='string')location.replace('#'+keep[h]);return;}location.replace('demo.html#'+(h==='login'?'overview':h));})(location.hash.slice(1));
 </script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113913973', 'ym');
+
+    ym(113913973, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<!-- /Yandex.Metrika counter -->
+<script>
+/* Цели Метрики: переход в личный кабинет и в демо — с местом кнопки на странице (data-place или раздел) */
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[href]');
+  if(!a || typeof ym !== 'function') return;
+  var s = a.closest('header,footer,section,article');
+  var place = a.getAttribute('data-place') || (s && (s.id || (s.className || '').split(' ')[0])) || 'page';
+  if(a.hostname === 'app.delovoice.ru') ym(113913973, 'reachGoal', 'cabinet_click', {place: place, page: location.pathname});
+  else if(/demo\.html$/.test(a.pathname)) ym(113913973, 'reachGoal', 'demo_click', {place: place});
+}, true);
+</script>
 </head>
 <body class="site">
+<noscript><div><img src="https://mc.yandex.ru/watch/113913973" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
 <header class="site-nav">
   <a href="/" class="brand" aria-label="На главную страницу Деловойс"><img src="assets/logo-dark.png" alt="Деловойс" width="285" height="29"></a>
@@ -48,7 +72,7 @@
     <a href="#pricing" class="nav-link">Цены</a>
     <a href="#faq" class="nav-link">Вопросы</a>
     <a href="demo.html" class="nav-link">Демо-версия</a>
-    <a href="https://app.delovoice.ru/" class="btn">Личный кабинет</a>
+    <a data-place="шапка" href="https://app.delovoice.ru/" class="btn">Личный кабинет</a>
   </nav>
 </header>
 
@@ -66,7 +90,7 @@
       <p>Ведите встречу как вам удобно: он превратит разговор в&nbsp;задачи со&nbsp;сроками и&nbsp;поможет прийти к&nbsp;результату.</p>
     </div>
     <div class="hero-actions">
-      <a href="https://app.delovoice.ru/" class="btn primary">Личный кабинет</a>
+      <a data-place="первый экран" href="https://app.delovoice.ru/" class="btn primary">Личный кабинет</a>
       <a href="demo.html" class="btn">Демо-версия</a>
     </div>
   </div>
@@ -92,7 +116,7 @@
         <div><dt>Безопасное хранение данных</dt><dd>Данные хранятся на&nbsp;серверах в&nbsp;России и&nbsp;передаются по&nbsp;защищённому соединению. У&nbsp;каждой компании своя отдельная база.</dd></div>
       </dl>
       <div class="product-actions">
-        <a href="https://app.delovoice.ru/" class="btn primary">Личный кабинет</a>
+        <a data-place="все рабочие дела" href="https://app.delovoice.ru/" class="btn primary">Личный кабинет</a>
         <a href="demo.html" class="btn">Демо-версия</a>
       </div>
     </div>
@@ -136,7 +160,7 @@
         <p class="plan-price"><span class="num">20 000</span>&nbsp;₽<small>/месяц</small></p>
       </div>
       <p class="plan-desc"><b>20 встреч</b> в&nbsp;месяц</p>
-      <a href="https://app.delovoice.ru/" class="btn plan-btn">Личный кабинет</a>
+      <a data-place="тариф: 20 встреч" href="https://app.delovoice.ru/" class="btn plan-btn">Личный кабинет</a>
       <ul class="plan-list">
         <li>Встреча — до&nbsp;одного часа</li>
         <li>Задачи и&nbsp;сроки со&nbsp;словами участников</li>
@@ -149,7 +173,7 @@
         <p class="plan-price"><span class="num">50 000</span>&nbsp;₽<small>/месяц</small></p>
       </div>
       <p class="plan-desc"><b>70 встреч</b> в&nbsp;месяц</p>
-      <a href="https://app.delovoice.ru/" class="btn plan-btn">Личный кабинет</a>
+      <a data-place="тариф: 70 встреч" href="https://app.delovoice.ru/" class="btn plan-btn">Личный кабинет</a>
       <ul class="plan-list">
         <li>Встреча — до&nbsp;одного часа</li>
         <li>Задачи и&nbsp;сроки со&nbsp;словами участников</li>
@@ -162,7 +186,7 @@
         <p class="plan-price"><span class="num">70 000</span>&nbsp;₽<small>/месяц</small></p>
       </div>
       <p class="plan-desc"><b>100 встреч</b> в&nbsp;месяц</p>
-      <a href="https://app.delovoice.ru/" class="btn plan-btn accent-btn">Личный кабинет</a>
+      <a data-place="тариф: 100 встреч" href="https://app.delovoice.ru/" class="btn plan-btn accent-btn">Личный кабинет</a>
       <ul class="plan-list">
         <li>Встреча — до&nbsp;одного часа</li>
         <li>Задачи и&nbsp;сроки со&nbsp;словами участников</li>
@@ -201,7 +225,7 @@
 <section class="wrap">
   <div class="cta">
     <div><h2>Начните с одной встречи</h2><p>Создайте кабинет. Первую встречу можно записать прямо в&nbsp;нём.</p></div>
-    <a href="https://app.delovoice.ru/" class="btn accent-btn">Личный кабинет</a>
+    <a data-place="низ страницы" href="https://app.delovoice.ru/" class="btn accent-btn">Личный кабинет</a>
   </div>
 </section>
 

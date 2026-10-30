@@ -48,8 +48,32 @@ td:first-child{color:var(--muted);width:38%}
 @media(max-width:600px){.card{padding:20px 18px}td{display:block;width:100%;padding:4px 0}td:first-child{padding-top:10px}td+td{border-top:0}}
 .card.simple{margin-bottom:18px}.card.simple h2{font-size:16px;margin:20px 0 4px}.card.simple p{margin:0 0 6px}html{scroll-behavior:smooth}
 </style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113913973', 'ym');
+
+    ym(113913973, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<!-- /Yandex.Metrika counter -->
+<script>
+/* Цели Метрики: переход в личный кабинет и в демо — с местом кнопки на странице (data-place или раздел) */
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[href]');
+  if(!a || typeof ym !== 'function') return;
+  var s = a.closest('header,footer,section,article');
+  var place = a.getAttribute('data-place') || (s && (s.id || (s.className || '').split(' ')[0])) || 'page';
+  if(a.hostname === 'app.delovoice.ru') ym(113913973, 'reachGoal', 'cabinet_click', {place: place, page: location.pathname});
+  else if(/demo\.html$/.test(a.pathname)) ym(113913973, 'reachGoal', 'demo_click', {place: place});
+}, true);
+</script>
 </head>
 <body>
+<noscript><div><img src="https://mc.yandex.ru/watch/113913973" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <div class="wrap">
   <div class="top"><a class="brand" href="/" aria-label="На главную страницу Деловойс">Дело<i>войс</i></a><a href="/">Вернуться на сайт</a></div>
   <div class="card simple">
