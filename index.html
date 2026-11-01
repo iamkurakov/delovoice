@@ -58,7 +58,7 @@ document.addEventListener('click', function(e){
 <header class="site-nav">
   <a href="/" class="brand" aria-label="На главную страницу Деловойс"><img src="assets/logo-dark.png" alt="Деловойс" width="285" height="29"></a>
   <nav aria-label="Основное меню">
-    <a href="#pricing" class="nav-link">Цены</a>
+    <a href="#pricing" class="nav-link">Тарифы</a>
     <a href="#faq" class="nav-link">Вопросы</a>
     <a href="demo.html" class="nav-link">Демо-версия</a>
     <a data-place="шапка" href="https://app.delovoice.ru/" class="btn">Личный кабинет</a>
@@ -137,51 +137,94 @@ document.addEventListener('click', function(e){
   </div>
 </section>
 
-<section class="block wrap" id="pricing">
+<section class="block wrap" id="pricing" aria-labelledby="pricing-title">
   <div class="pricing-head">
-    <h2>Сколько стоит Деловойс</h2>
-    <p class="lead">Цены предварительные. Встреча — разговор на&nbsp;рабочем месте, совещание или планёрка.</p>
+    <div class="eyebrow">Формат под ваши встречи</div>
+    <h2 id="pricing-title">Тарифы ДЕЛОВОЙС</h2>
+    <p class="lead">Выберите подходящий формат работы — от первых встреч до регулярной управленческой работы компании.</p>
+    <p class="pricing-coffee">Один час работы с ДЕЛОВОЙС — примерно как одна чашка кофе на вашей встрече.</p>
   </div>
-  <div class="plans">
-    <article class="plan plan-1">
-      <div class="plan-top">
-        <h3 class="plan-chip">Первый вариант</h3>
-        <p class="plan-price"><span class="num">20 000</span>&nbsp;₽<small>/месяц</small></p>
-      </div>
-      <p class="plan-desc"><b>20 встреч</b> в&nbsp;месяц</p>
-      <a data-place="тариф: 20 встреч" href="https://app.delovoice.ru/" class="btn plan-btn">Личный кабинет</a>
-      <ul class="plan-list">
-        <li>Встреча — до&nbsp;одного часа</li>
-        <li>Задачи и&nbsp;сроки со&nbsp;словами участников</li>
-        <li>Итоги за&nbsp;день, неделю и&nbsp;год</li>
+  <div class="tariff-grid">
+    <article class="tariff-card" aria-labelledby="tariff-free">
+      <div class="tariff-heading"><h3 id="tariff-free">Free</h3></div>
+      <p class="tariff-price">0&nbsp;₽ <span>/ месяц</span></p>
+      <div class="tariff-volume"><p><strong>3 часа в месяц</strong></p><p>Дополнительный час — 420&nbsp;₽</p></div>
+      <p class="tariff-description">Для знакомства с системой и первых рабочих встреч.</p>
+      <ul class="tariff-features">
+        <li>Запись и загрузка встреч</li>
+        <li>Автоматическая расшифровка</li>
+        <li>ИИ-разбор задач и поручений</li>
+        <li>Отчёт по встрече</li>
+        <li>История договорённостей</li>
       </ul>
+      <ul class="tariff-limits" aria-label="Ограничения Free"><li>Без Делометрики</li><li>Без сводной аналитики</li></ul>
+      <a data-place="тариф: Free" href="https://app.delovoice.ru/" class="btn tariff-button">Начать бесплатно</a>
     </article>
-    <article class="plan plan-2">
-      <div class="plan-top">
-        <h3 class="plan-chip">Второй вариант</h3>
-        <p class="plan-price"><span class="num">50 000</span>&nbsp;₽<small>/месяц</small></p>
-      </div>
-      <p class="plan-desc"><b>70 встреч</b> в&nbsp;месяц</p>
-      <a data-place="тариф: 70 встреч" href="https://app.delovoice.ru/" class="btn plan-btn">Личный кабинет</a>
-      <ul class="plan-list">
-        <li>Встреча — до&nbsp;одного часа</li>
-        <li>Задачи и&nbsp;сроки со&nbsp;словами участников</li>
-        <li>Итоги за&nbsp;день, неделю и&nbsp;год</li>
+    <article class="tariff-card" aria-labelledby="tariff-solo">
+      <div class="tariff-heading"><h3 id="tariff-solo">Solo</h3></div>
+      <p class="tariff-price">3&nbsp;900&nbsp;₽ <span>/ месяц</span></p>
+      <div class="tariff-volume"><p><strong>10 часов в месяц</strong></p><p>Дополнительный час — 350&nbsp;₽</p></div>
+      <p class="tariff-description">Для предпринимателей, экспертов и самостоятельной работы с клиентами, подрядчиками и партнёрами.</p>
+      <ul class="tariff-features">
+        <li>Всё из Free</li>
+        <li>Делометрика</li>
+        <li>Сводная аналитика</li>
+        <li>Полноценная работа с историей встреч</li>
+        <li>Дополнительные часы по сниженной цене</li>
       </ul>
+      <a data-place="тариф: Solo" href="https://app.delovoice.ru/" class="btn tariff-button">Выбрать Solo</a>
     </article>
-    <article class="plan plan-3">
-      <div class="plan-top">
-        <h3 class="plan-chip">Третий вариант</h3>
-        <p class="plan-price"><span class="num">70 000</span>&nbsp;₽<small>/месяц</small></p>
-      </div>
-      <p class="plan-desc"><b>100 встреч</b> в&nbsp;месяц</p>
-      <a data-place="тариф: 100 встреч" href="https://app.delovoice.ru/" class="btn plan-btn accent-btn">Личный кабинет</a>
-      <ul class="plan-list">
-        <li>Встреча — до&nbsp;одного часа</li>
-        <li>Задачи и&nbsp;сроки со&nbsp;словами участников</li>
-        <li>Итоги за&nbsp;день, неделю и&nbsp;год</li>
+    <article class="tariff-card tariff-recommended" aria-labelledby="tariff-forum">
+      <div class="tariff-heading"><h3 id="tariff-forum">Forum</h3><span class="tariff-badge">Рекомендуем</span></div>
+      <p class="tariff-price">9&nbsp;900&nbsp;₽ <span>/ месяц</span></p>
+      <div class="tariff-volume"><p><strong>30 часов в месяц</strong></p><p>Дополнительный час — 270&nbsp;₽</p></div>
+      <p class="tariff-description">Для руководителей и команд, которые регулярно проводят планёрки и рабочие встречи.</p>
+      <ul class="tariff-features">
+        <li>Всё из Solo</li>
+        <li>Больший объём часов</li>
+        <li>Регулярная работа с командой</li>
+        <li>Контроль поручений и сроков</li>
+        <li>Удобнее для постоянного управленческого цикла</li>
       </ul>
+      <a data-place="тариф: Forum" href="https://app.delovoice.ru/" class="btn tariff-button accent-btn">Выбрать Forum</a>
     </article>
+    <article class="tariff-card" aria-labelledby="tariff-progress">
+      <div class="tariff-heading"><h3 id="tariff-progress">Progress</h3></div>
+      <p class="tariff-price">19&nbsp;900&nbsp;₽ <span>/ месяц</span></p>
+      <div class="tariff-volume"><p><strong>70 часов в месяц</strong></p><p>Дополнительный час — 220&nbsp;₽</p></div>
+      <p class="tariff-description">Для компаний с большим количеством встреч, несколькими направлениями и высокой нагрузкой.</p>
+      <ul class="tariff-features">
+        <li>Всё из Forum</li>
+        <li>Большой объём часов</li>
+        <li>Выгоднее для интенсивного использования</li>
+        <li>Подходит для ежедневной работы компании</li>
+        <li>Максимально удобен для масштабного процесса</li>
+      </ul>
+      <a data-place="тариф: Progress" href="https://app.delovoice.ru/" class="btn tariff-button">Выбрать Progress</a>
+    </article>
+  </div>
+  <article class="tariff-individual" aria-labelledby="tariff-individual">
+    <div class="tariff-individual-intro">
+      <div class="eyebrow">Особый формат работы</div>
+      <h3 id="tariff-individual">Individual</h3>
+      <p>Для предприятий и специалистов, которым требуется особый формат работы, индивидуальная настройка или нестандартные условия.</p>
+    </div>
+    <ul class="tariff-features">
+      <li>Индивидуальный объём часов</li>
+      <li>Настройка под специфику предприятия</li>
+      <li>Возможные особые правила обработки</li>
+      <li>Отдельные сценарии использования</li>
+      <li>Персональный формат обсуждения условий</li>
+    </ul>
+    <div class="tariff-individual-action">
+      <p class="tariff-price">По запросу</p>
+      <p>Индивидуальные условия</p>
+      <a data-place="тариф: Individual" href="mailto:delovoice.info@yandex.ru?subject=Заявка%20на%20тариф%20Individual" class="btn accent-btn">Оставить заявку</a>
+    </div>
+  </article>
+  <div class="pricing-note">
+    <p>Все основные тарифы включают запись и загрузку встреч, автоматическую расшифровку, ИИ-разбор, задачи и поручения, отчёты по встречам и историю договорённостей.</p>
+    <p><strong>Делометрика и сводная аналитика доступны начиная с тарифа Solo.</strong></p>
   </div>
 </section>
 
