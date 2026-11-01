@@ -679,3 +679,17 @@ html,body{overflow-x:hidden}
 @media(max-width:1100px){.tariff-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.tariff-heading{min-height:32px}.tariff-description{min-height:68px}.tariff-individual{grid-template-columns:1fr 1fr;gap:28px}.tariff-individual-action{grid-column:1/-1;display:flex;align-items:center;gap:20px;flex-wrap:wrap}.tariff-individual-action .tariff-price,.tariff-individual-action>p:not(.tariff-price){margin:0}.tariff-individual-action .btn{width:auto;margin-left:auto}}
 @media(max-width:600px){.tariff-grid{grid-template-columns:1fr;margin-top:28px;gap:16px}.tariff-card{padding:24px}.tariff-recommended{padding:23px}.tariff-description{min-height:0}.tariff-price{font-size:30px}.tariff-individual{grid-template-columns:1fr;gap:26px;padding:28px 24px}.tariff-individual-action{grid-column:auto;display:block}.tariff-individual-action>p:not(.tariff-price){margin:8px 0 20px}.tariff-individual-action .btn{width:100%}.pricing-note{text-align:left}.pricing-coffee{margin-left:0}}
 @media(max-width:370px){.site-nav{gap:12px}.site-nav .brand img{width:130px}}
+
+/* Вся карточка ведёт по той же ссылке, что и её кнопка. */
+.tariff-card,.tariff-individual{position:relative;isolation:isolate;transition:background-color .22s ease,box-shadow .22s ease,transform .22s ease}
+.tariff-card .tariff-button::after,.tariff-individual-action .btn::after{content:"";position:absolute;inset:0;z-index:1;border-radius:24px;cursor:pointer}
+.tariff-card:has(a:focus-visible),.tariff-individual:has(a:focus-visible){outline:3px solid var(--action);outline-offset:5px}
+@media(hover:hover) and (pointer:fine){
+  .tariff-card:hover{background-color:#fff1dc;transform:translateY(-3px);box-shadow:0 18px 38px -22px rgba(163,81,57,.35)}
+  .tariff-recommended:hover{background:linear-gradient(155deg,#ffe6c2,#fff1dc 65%)}
+  .tariff-individual:hover{background-color:#293a4b;transform:translateY(-3px);box-shadow:0 18px 38px -22px rgba(27,38,50,.5)}
+  .site .tariff-card:hover .tariff-button{background:var(--surface-sunken)}
+  .site .tariff-recommended:hover .tariff-button{background:var(--action-hover)}
+  .site .tariff-individual:hover .btn{background:#ffc587;border-color:#ffc587}
+}
+@media(prefers-reduced-motion:reduce){.tariff-card,.tariff-individual{transition:none}.tariff-card:hover,.tariff-individual:hover{transform:none}}
