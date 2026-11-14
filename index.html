@@ -32,7 +32,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" as="image" type="image/webp" imagesrcset="assets/hero-wide-1100.webp 1100w, assets/hero-wide-1672.webp 1672w" imagesizes="100vw" media="(min-width: 901px)">
 <link rel="preload" as="image" type="image/webp" imagesrcset="assets/hero-tall-620.webp 620w, assets/hero-tall-941.webp 941w" imagesizes="100vw" media="(max-width: 900px)">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20261114">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Деловойс","alternateName":"Delovoice","url":"https://delovoice.ru/","applicationCategory":"BusinessApplication","operatingSystem":"Web","inLanguage":"ru","description":"Деловойс помнит всё, о чём говорилось на встречах. Ведите встречу как вам удобно: он превратит разговор в задачи со сроками и поможет прийти к результату."}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Где хранятся мои записи и кто их видит?", "acceptedAnswer": {"@type": "Answer", "text": "Записи, текст и задачи хранятся на серверах в России. У каждой компании своя отдельная база, другие компании её не видят. Для расшифровки запись передаётся сервису распознавания речи, текст для разбора — нейросети, которая работает на серверах в России. Мы не продаём данные и не используем их для рекламы. Аудио хранится не больше 90 дней, потом удаляется, текст остаётся."}}, {"@type": "Question", "name": "Нейросеть может что-то выдумать?", "acceptedAnswer": {"@type": "Answer", "text": "У каждой задачи есть цитата со встречи и время в записи. Если подходящих слов в тексте нет, задача не появляется. Сроки, суммы и имена берутся только из разговора: не назвали срок — задача остаётся без срока. Если сервис не уверен, он ставит пометку «проверьте». Неудачный разбор можно отменить целиком."}}, {"@type": "Question", "name": "Нейросеть учится на наших разговорах?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Она работает по инструкции и не обучается на ваших встречах. Всё, что сервис «помнит» о компании, — это ваш список дел и ответы о компании в кабинете."}}, {"@type": "Question", "name": "Нужно ли согласие сотрудников на запись?", "acceptedAnswer": {"@type": "Answer", "text": "Записывать встречи или нет, решает владелец кабинета. Он предупреждает участников о записи и отвечает за то, чтобы запись была законной. Сервис не создаёт и не хранит голосовые отпечатки для узнавания людей."}}, {"@type": "Question", "name": "Что будет с данными, если я перестану пользоваться?", "acceptedAnswer": {"@type": "Answer", "text": "Данные можно удалить по вашему письму. После закрытия кабинета они удаляются в течение 30 дней, если закон не требует хранить их дольше. Подробно — в правилах обработки личных данных."}}]}</script>
 <script>
@@ -137,12 +137,15 @@ document.addEventListener('click', function(e){
   </div>
 </section>
 
+<div class="wrap pricing-quote">
+  <blockquote><p>Один час работы с&nbsp;ДЕЛОВОЙС — примерно как одна чашка кофе на&nbsp;вашей встрече.</p></blockquote>
+</div>
+
 <section class="block wrap" id="pricing" aria-labelledby="pricing-title">
   <div class="pricing-head">
     <div class="eyebrow">Формат под ваши встречи</div>
     <h2 id="pricing-title">Тарифы ДЕЛОВОЙС</h2>
     <p class="lead">Выберите подходящий формат работы — от первых встреч до регулярной управленческой работы компании.</p>
-    <p class="pricing-coffee">Один час работы с ДЕЛОВОЙС — примерно как одна чашка кофе на вашей встрече.</p>
   </div>
   <div class="tariff-grid">
     <article class="tariff-card" aria-labelledby="tariff-free">
