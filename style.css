@@ -642,7 +642,10 @@ html,body{overflow-x:hidden}
 /* Тарифы публичного сайта: четыре формата и индивидуальные условия. */
 #pricing .pricing-head{max-width:760px}
 .pricing-head .eyebrow{margin-bottom:16px}
-.pricing-coffee{margin:18px auto 0;max-width:560px;color:var(--action);font-size:14px;line-height:1.6}
+.pricing-quote{padding-top:48px;text-align:center}
+.pricing-quote blockquote{position:relative;max-width:850px;margin:0 auto;padding:40px 16px 0}
+.pricing-quote blockquote::before{content:'«';position:absolute;top:0;left:0;right:0;color:var(--action);font:600 56px/1 var(--f-display)}
+.pricing-quote p{margin:0;font:500 clamp(20px,3vw,30px)/1.5 var(--f-sans);color:var(--ink);text-wrap:balance}
 .tariff-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:40px;align-items:stretch}
 .tariff-card{min-width:0;display:flex;flex-direction:column;padding:26px 22px;border:1px solid var(--line);border-radius:24px;background:var(--surface-raised);box-shadow:0 12px 32px -24px rgba(27,38,50,.3)}
 .tariff-heading{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;min-height:52px;margin-bottom:20px}
@@ -677,7 +680,7 @@ html,body{overflow-x:hidden}
 .pricing-note p{margin:0 0 8px}
 .pricing-note strong{font-weight:500;color:var(--ink)}
 @media(max-width:1100px){.tariff-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.tariff-heading{min-height:32px}.tariff-description{min-height:68px}.tariff-individual{grid-template-columns:1fr 1fr;gap:28px}.tariff-individual-action{grid-column:1/-1;display:flex;align-items:center;gap:20px;flex-wrap:wrap}.tariff-individual-action .tariff-price,.tariff-individual-action>p:not(.tariff-price){margin:0}.tariff-individual-action .btn{width:auto;margin-left:auto}}
-@media(max-width:600px){.tariff-grid{grid-template-columns:1fr;margin-top:28px;gap:16px}.tariff-card{padding:24px}.tariff-recommended{padding:23px}.tariff-description{min-height:0}.tariff-price{font-size:30px}.tariff-individual{grid-template-columns:1fr;gap:26px;padding:28px 24px}.tariff-individual-action{grid-column:auto;display:block}.tariff-individual-action>p:not(.tariff-price){margin:8px 0 20px}.tariff-individual-action .btn{width:100%}.pricing-note{text-align:left}.pricing-coffee{margin-left:0}}
+@media(max-width:600px){.tariff-grid{grid-template-columns:1fr;margin-top:28px;gap:16px}.tariff-card{padding:24px}.tariff-recommended{padding:23px}.tariff-description{min-height:0}.tariff-price{font-size:30px}.tariff-individual{grid-template-columns:1fr;gap:26px;padding:28px 24px}.tariff-individual-action{grid-column:auto;display:block}.tariff-individual-action>p:not(.tariff-price){margin:8px 0 20px}.tariff-individual-action .btn{width:100%}.pricing-note{text-align:left}}
 @media(max-width:370px){.site-nav{gap:12px}.site-nav .brand img{width:130px}}
 
 /* Вся карточка ведёт по той же ссылке, что и её кнопка. */
