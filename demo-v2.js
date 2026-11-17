@@ -83,7 +83,7 @@ function coverage(g){const a=gs(g.id);return a.length?Math.round(a.filter(s=>s.s
 function indexDate(d){return new Date(d+'T12:00:00').getTime()}
 function range(){const p=state.period;if(p==='today')return[today,today];if(p==='week')return[day(-6),today];if(p==='month')return[day(-29),today];if(p==='year')return[day(-364),today];return[state.filterFrom,state.filterTo]}
 function shownMeet(){const r=range();return allMeet().filter(m=>m.date>=r[0]&&m.date<=r[1])}
-function svgLogo(){return '<span class="mark">D</span><span>ДЕЛОВОЙС</span>'}
+function svgLogo(){return '<img src="assets/logo-'+(state.theme==='dark'?'white':'dark')+'.png" alt="Деловойс" width="190" height="26" class="dv-wordmark">'}
 function navButton(page,label,name,count){return '<button type="button" data-go="'+page+'" class="'+(state.page===page||state.page==='meeting'&&page==='meet'||state.page==='goal'&&page==='goals'||state.page==='topic'&&page==='topics'?'active':'')+'">'+ic(name)+'<span>'+label+'</span>'+(count?'<span class="count">'+count+'</span>':'')+'</button>'}
 function side(){const t=byProject(steps),d=t.filter(s=>s.status==='DONE').length;return '<aside class="dv-side" aria-label="Меню кабинета"><a class="dv-logo" href="/" aria-label="На сайт Delovoice">'+svgLogo()+'</a>'+
 '<div class="dv-pop-wrap"><button type="button" class="dv-project" data-act="projectMenu" aria-expanded="'+state.projectOpen+'"><span><small>Проект</small><strong>'+x(tp().name)+'</strong></span>'+ic('chev')+'</button>'+
